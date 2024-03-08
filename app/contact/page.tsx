@@ -1,11 +1,11 @@
 import React from 'react'
 
-const AdminPage = () => {
+const ContactPage = () => {
   return (
     <div className="p-5 text-xl font-bold">
-      AdminPage
+      Contact Page
     </div>
   )
 }
 
-export default AdminPage
+export default ContactPage
