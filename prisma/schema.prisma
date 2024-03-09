@@ -9,3 +9,17 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model Contact {
+  id        Int      @id @default(autoincrement())
+  last      String   @db.VarChar(100)
+  first     String   @db.VarChar(100)
+  status    Status   @default(INACTIVE)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum Status {
+  ACTIVE
+  INACTIVE
+}
