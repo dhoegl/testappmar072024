@@ -38,7 +38,7 @@ className="font-semibold text-xl tracking-tight">Your Site
           <Link href="/family" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
             Family
           </Link>
-          <Link href="/prayer" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+          <Link href="/prayer" className="block mt-4 lg:inline-block lg:mt-0 text-something hover:text-white mr-4">
             Prayer Requests
           </Link>
           <Link href="/about" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
