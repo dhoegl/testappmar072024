@@ -12,6 +12,7 @@ datasource db {
 
 model Contact {
   id        Int      @id @default(autoincrement())
+  churchid  Int      @db.Int
   last      String   @db.VarChar(100)
   first     String   @db.VarChar(100)
   status    Status   @default(INACTIVE)
