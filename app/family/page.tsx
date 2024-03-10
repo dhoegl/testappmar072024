@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from '@radix-ui/themes';
+import Link from 'next/link';
 
 const Family = () => {
   return (
@@ -8,7 +9,7 @@ const Family = () => {
     </div>
       <div>
         <Button>
-          New Family Member
+          <Link href="/family/new">New Family Member</Link>
         </Button>
       </div>
     </>
