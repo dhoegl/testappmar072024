@@ -1,5 +1,7 @@
 'use client'
 import { Button, TextArea, TextField } from '@radix-ui/themes'
+import SimpleMDE from "react-simplemde-editor";
+import "easymde/dist/easymde.min.css";
 import React from 'react'
 
 const NewFamilyMember = () => {
@@ -19,6 +21,8 @@ const NewFamilyMember = () => {
                     <TextField.Root className='space-y-3'>
                         <TextField.Input className='my-2' size="3" placeholder='First Name' />
                     </TextField.Root>
+                    {/* <TextArea className='space-y-3' placeholder='Description' /> */}
+                    <SimpleMDE className='space-y-3' placeholder='Description' />
                 </div>
                 <div className='py-3'>
                     <Button>Submit New Family Member</Button>
