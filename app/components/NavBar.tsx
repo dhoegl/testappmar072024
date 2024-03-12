@@ -11,20 +11,20 @@ const NavBar: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
 
-    <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+    <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6 transition-transform duration-900 ease-out">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
         {/* <span
 className="font-semibold text-xl tracking-tight">Your Site
         </span> */}
-        <Link href="/">
+        <Link href="/home">
           <Image
             src="/assets/TEC App Icon 08.png" // Set the path to your logo image
             width={50} // Set the desired width
             height={50} // Set the desired height
             alt="Your Site"
-            // placeholder="blur"
+          // placeholder="blur"
           />
-          </Link>
+        </Link>
       </div>
       <div className="lg:hidden">
         <Hamburger isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
@@ -32,7 +32,7 @@ className="font-semibold text-xl tracking-tight">Your Site
 
       <div className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto ${isOpen ? 'block' : 'hidden'} lg:block`}>
         <div className="text-sm lg:flex-grow">
-          <Link href="/" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+          <Link href="/home" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
             Home
           </Link>
           <Link href="/family" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
