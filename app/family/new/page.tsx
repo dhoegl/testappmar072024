@@ -8,7 +8,7 @@ import React from "react"
 import { useRouter } from 'next/navigation';
 
 interface FamilyForm {
-    churchid: number;
+    churchid: string;
     address: string;
     last: string;
     first: string;
@@ -24,8 +24,8 @@ const NewFamilyMember = () => {
         <>
             <form
                 onSubmit={handleSubmit( async (data) => {
-                    await axios.post('api/contacts', data);
-                    router.push('/family');
+                    await axios.post('/api/contacts', data);
+                    router.push('/');
                 })}>
                 <div className="p-5 text-xl font-bold">
                     New Family Member

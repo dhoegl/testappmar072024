@@ -3,10 +3,10 @@ import { z } from 'zod';
 import prisma from "@/prisma/client";
 
 const contactSchema = z.object({
-    churchid: z.number().int(),
+    churchid: z.string().min(1).max(100),
     last: z.string().min(1).max(100),
     first: z.string().min(1).max(100),
-    // address: z.string().min(1).max(100)
+    address: z.string().min(1).max(100)
 })
 
 export async function POST(request: NextRequest) {
@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(validation.error.errors, {status: 400});
 
     const newContact = await prisma.contact.create({
-        data: { churchid: body.churchid, last: body.last, first: body.first }
+        data: { churchid: body.churchid, last: body.last, first: body.first, address: body.address}
     })
 
     return NextResponse.json(newContact, { status: 201 })

@@ -12,10 +12,10 @@ datasource db {
 
 model Contact {
   id        Int      @id @default(autoincrement())
-  churchid  Int      @db.Int
+  churchid  String   @db.VarChar(10)
   last      String   @db.VarChar(100)
   first     String   @db.VarChar(100)
-  address  String?
+  address   String?
   status    Status   @default(INACTIVE)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
