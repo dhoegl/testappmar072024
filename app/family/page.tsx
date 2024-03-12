@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Family = () => {
   return (
     <><div className="p-5 text-xl font-bold">
-      Family
+      Family Members
     </div>
       <div>
         <Button>

@@ -2,25 +2,31 @@
 import { Button, TextArea, TextField } from '@radix-ui/themes'
 import SimpleMDE from "react-simplemde-editor";
 import { useForm, Controller } from "react-hook-form";
+import axios from "axios";
 import "easymde/dist/easymde.min.css";
-import React from 'react'
+import React from "react"
+import { useRouter } from 'next/navigation';
 
 interface FamilyForm {
     churchid: number;
-    descriptor: string;
+    address: string;
     last: string;
     first: string;
 }
 
 const NewFamilyMember = () => {
+    const router = useRouter();
     const { register, control, handleSubmit } = useForm<FamilyForm>();
-    console.log(register('descriptor'))
+
 
 
     return (
         <>
             <form
-                onSubmit={handleSubmit((data) => console.log(data))}>
+                onSubmit={handleSubmit( async (data) => {
+                    await axios.post('api/contacts', data);
+                    router.push('/family');
+                })}>
                 <div className="p-5 text-xl font-bold">
                     New Family Member
                 </div>
@@ -35,9 +41,9 @@ const NewFamilyMember = () => {
                         <TextField.Input className='my-2' size="3" placeholder='First Name' {...register('first')} />
                     </TextField.Root>
                     <Controller
-                        name="descriptor"
+                        name="address"
                         control={control}
-                        render={({ field }) => <SimpleMDE className='space-y-3' placeholder='Description' {...field} />}
+                        render={({ field }) => <SimpleMDE className='space-y-3' placeholder='Street Address' {...field} />}
                     />
                     {/* <TextArea className='space-y-3' placeholder='Description' /> */}
                     {/* <SimpleMDE className='space-y-3' placeholder='Description' /> */}

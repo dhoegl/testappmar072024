@@ -5,7 +5,8 @@ import prisma from "@/prisma/client";
 const contactSchema = z.object({
     churchid: z.number().int(),
     last: z.string().min(1).max(100),
-    first: z.string().min(1).max(100)
+    first: z.string().min(1).max(100),
+    // address: z.string().min(1).max(100)
 })
 
 export async function POST(request: NextRequest) {

@@ -15,6 +15,7 @@ model Contact {
   churchid  Int      @db.Int
   last      String   @db.VarChar(100)
   first     String   @db.VarChar(100)
+  address  String?
   status    Status   @default(INACTIVE)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
